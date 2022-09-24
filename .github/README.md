@@ -1,13 +1,13 @@
-# **validatees**
+# @jetvil/validate
 
-[![Bundle size](https://img.shields.io/bundlephobia/min/validatees/latest?style=for-the-badge&color=3178c6)](https://bundlephobia.com/package/validatees@latest)&nbsp;
-![Downloads](https://img.shields.io/npm/dt/validatees?style=for-the-badge)&nbsp;
-[![License](https://img.shields.io/npm/l/validatees?style=for-the-badge&color=efb103)](https://github.com/m10rten/validatees/blob/main/LICENSE)&nbsp;
-[![Version](https://img.shields.io/npm/v/validatees?style=for-the-badge&color=cb3837&logo=npm)](https://www.npmjs.com/package/validatees)&nbsp;
-[![GitHub Repo stars](https://img.shields.io/github/stars/m10rten/validatees?color=E9E9E9&logo=Github&style=for-the-badge)](https://www.github.com/m10rten/validatees)&nbsp;
-![GitHub issues](https://img.shields.io/github/issues-raw/m10rten/validatees?label=issues&style=for-the-badge)
+[![Bundle size](https://img.shields.io/bundlephobia/min/@jetvil/validate/latest?label=Bundle%20Size&style=for-the-badge)](https://bundlephobia.com/package/@jetvil/validate@latest)
+[![Version](https://img.shields.io/npm/v/@jetvil/validate?style=for-the-badge&color=cb3837&logo=npm)](https://www.npmjs.com/package/@jetvil/validate)&nbsp;
+![Downloads](https://img.shields.io/npm/dt/@jetvil/validate?style=for-the-badge)&nbsp;
+[![GitHub](https://img.shields.io/github/license/jetvil/validate?style=for-the-badge)](https://github.com/jetvil/validate/blob/main/LICENSE)&nbsp;
+[![GitHub Repo stars](https://img.shields.io/github/stars/jetvil/validate?color=E9E9E9&logo=Github&style=for-the-badge)](https://www.github.com/jetvil/validate)&nbsp;
+[![GitHub issues](https://img.shields.io/github/issues-raw/jetvil/validate?label=issues&style=for-the-badge)](https://github.com/jetvil/validate/issues)&nbsp;
 
-Validation package for ES6+, TypeScript and JavaScript(CommonJS and Module) ready.
+✅ Core features of the `@jetvil` packages.
 
 # Features
 
@@ -24,27 +24,27 @@ To use this package, **install** using `npm`, `yarn` or `pnpm`📥:
 
 ```bash
 # npm
-npm install validatees
+npm install @jetvil/validate
 # yarn
-yarn add validatees
+yarn add @jetvil/validate
 # pnpm
-pnpm install validatees
+pnpm install @jetvil/validate
 ```
 
 To check if you have the **latest version**, run using `npx`✅:
 
 ```bash
 # npx
-npx validatees-cli --check
+npx @jetvil/validate-cli --check
 ```
 
 ## Usage
 
 ```js
 // ES6+ JavaScript CommonsJs
-const validatees = require("validatees");
+const validate = require("@jetvil/validate");
 // TypeScript || ES6+ JavaScript module
-import validatees from "validatees";
+import * as validate from "@jetvil/validate";
 ```
 
 ### Documentation
@@ -52,18 +52,6 @@ import validatees from "validatees";
 - [VListener](#vlistener)
   - [parameters](#parameters)
   - [options](#options-vlistener)
-- [CLI](#cli)
-  - [installation](#installation-cli)
-  - [usage](#usage-cli)
-  - [options](#options-cli)
-- [types](#types)
-  - [isFalsy](#isfalsy)
-  - [isFalsyExtended](#isfalsyextended)
-  - [isTruthy](#istruthy)
-  - [isTruthyExtended](#istruthyextended)
-  - [isString](#isstring)
-  - [isNumber](#isnumber)
-  - [isBoolean](#isboolean-)
 - [matchers](#matchers)
   - [isValidEmail](#isvalidemail)
   - [isValidPassword](#isvalidpassword)
@@ -81,7 +69,7 @@ Adding validation over your array before your program starts.
 
 - `array`: array to validate.
 - `callback`: function to validate each item in the array, must return boolean, can only take 1 parameter(for now!).  
- Use validatees `isTruthy` or `isFalsy` for example.
+ Use @jetvil/validate `isTruthy` or `isFalsy` for example.
 <!-- To Be Extended with callback array to validate even more! -->
 
 #### **options-vlistener**:
@@ -95,7 +83,7 @@ Adding validation over your array before your program starts.
 - `remove`: remove listeners for given arrays.
 
 ```js
-const { VListener } = require("validatees");
+const { VListener } = require("@jetvil/validate");
 
 const vListener = new VListener();
 const arr1 = [];
@@ -127,188 +115,6 @@ vListener.remove([{ array: arr2 }]);
 arr2.push({}); // can now be pushed again, [{ a: 1 }, { b: 2 }, {}]
 ```
 
-### CLI
-
-#### **installation-cli**:
-
-To use the CLI, you can install it globally using `npm` or `yarn`:
-
-```bash
-# npm
-npm install -g validatees
-# yarn
-yarn global add validatees
-```
-
-#### **usage-cli**:
-
-To use the CLI, run `validatees-cli` in your terminal:
-
-```bash
-# npx
-npx validatees-cli <args>
-# npm & yarn
-validatees-cli <args>
-```
-
-#### **options-cli**:
-
-- `--help, -help, --h, -h`: show help. </br>
-  `validatees-cli --check --help` or `validatees-cli -h` or `validatees-cli --h`
-  - Can be used after each of the following flags to show help for that flag.
-  - Or can be used to display all the flags and their description.
-- `--version, -version, --v, -v`: show the current installed version.
-- `--check, -check, --c, -c`: check if the installed version is up to date with the latest version.
-- `--exit, -exit, --e, -e`: exit the process after the command execution, default: `false`.
-- `--verbose, -verbose, --vb, -vb`: show more information, default: `false`.
-- `--ci, -ci`: run in CI mode.
-- `--shell, -shell, --s, -s`: open the custom shell to try out the functions.
-<!-- - `--update, -update, --u, -u`: update to the latest version. -->
-
-### Types
-
-Type checking can be difficult, but with `validatees` types, it's easy.
-
-#### **isFalsy**:
-
-Made from ['Falsy MDN defenition'](https://developer.mozilla.org/en-US/docs/Glossary/Falsy).
-
-```js
-const { isFalsy } = require("validatees");
-isFalsy(0); // true
-isFalsy(1); // false
-```
-
-#### **isFalsyExtended**:
-
-Made from ['Falsy MDN defenition'](https://developer.mozilla.org/en-US/docs/Glossary/Falsy).</br>
-Also includes Array and object checking.
-
-```js
-const { isFalsyExtended } = require("validatees");
-isFalsyExtended(1); // false
-isFalsyExtended(0); // true
-isFalsyExtended([]); // true
-isFalsyExtended({}); // true
-```
-
-#### **isTruthy**:
-
-Everything not falsy is truthy. </br>
-Made from ['Truthy MDN defenition'](https://developer.mozilla.org/en-US/docs/Glossary/Truthy)
-
-```js
-const { isTruthy } = require("validatees");
-isTruthy(1); // true
-isTruthy(0); // false
-```
-
-#### **isTruthyExtended**:
-
-Everything not falsy is truthy. </br>
-Made from ['Truthy MDN defenition'](https://developer.mozilla.org/en-US/docs/Glossary/Truthy)
-Also includes Array and object checking.
-
-```js
-const { isTruthyExtended } = require("validatees");
-isTruthyExtended(1); // true
-isTruthyExtended(0); // false
-isTruthyExtended([]); // false
-isTruthyExtended({}); // false
-```
-
-#### **isNullish**:
-
-Check if value is null or undefined.
-
-```js
-const { isNullish } = require("validatees");
-isNullish(null); // true
-isNullish(undefined); // true
-isNullish(0); // false
-```
-
-#### **isString**:
-
-Check if value is a string.
-
-```js
-const { isString } = require("validatees");
-isString("string"); // true
-isString(1); // false
-```
-
-#### **isNumber**:
-
-Check if value is a number.
-
-```js
-const { isNumber } = require("validatees");
-isNumber(1); // true
-isNumber(Infinity); // true
-isNumber("string"); // false
-```
-
-#### **isBoolean**:
-
-Check if value is a boolean.
-
-```js
-const { isBoolean } = require("validatees");
-isBoolean(true); // true
-isBoolean(false); // true
-isBoolean("1"); // false
-```
-
-#### **isDate**:
-
-Check if value is a date.
-
-```js
-const { isDate } = require("validatees");
-isDate(new Date()); // true
-isDate("1"); // false
-```
-
-#### **isRegExp**:
-
-Check if value is a regular expression.
-
-```js
-const { isRegExp } = require("validatees");
-isRegExp(/test/); // true
-isRegExp(new RegExp("test")); // true
-isRegExp("1"); // false
-```
-
-#### **isExtendable**:
-
-Check if value is extendable for modification.
-
-```js
-const { isExtendable } = require("validatees");
-isExtendable({}); // true
-isExtendable([]); // true
-
-const prevent = {};
-Object.preventExtensions(prevent);
-isExtendable(obj); // false
-
-const sealed = {};
-Object.seal(sealed);
-isExtendable(sealed); // false
-
-const frozen = {};
-Object.freeze(frozen);
-isExtendable(frozen); // false
-
-const frozenArray = [];
-Object.freeze(frozenArray);
-isExtendable(frozenArray); // false
-
-isExtendable(1 /**anything else then object or array */); // throws error
-```
-
 ### Matchers
 
 Matchers are functions that check if a value matches a certain pattern or value.
@@ -318,7 +124,7 @@ Matchers are functions that check if a value matches a certain pattern or value.
 Check if value is unique in array or object(key mostly).
 
 ```js
-const { isUnique } = require("validatees");
+const { isUnique } = require("@jetvil/validate");
 isUnique([1, 2, 3, 4], 1); // false
 isUnique([1, 2, 3, 4], { a: 1 }); // throws error
 isUnique({ a: 1, b: 2 }, { a: 1 }); // false
@@ -330,7 +136,7 @@ isUnique({ a: 1, b: 2 }, { c: 1 }); // true
 Check if two values soft match with each other.
 
 ```js
-const { isSoftMatch } = require("validatees");
+const { isSoftMatch } = require("@jetvil/validate");
 isSoftMatch("string", "STRING"); // true
 isSoftMatch("string", "abc"); // false
 isSoftMatch(1, 1.0); // true
@@ -341,7 +147,7 @@ isSoftMatch(1, 1.0); // true
 Check if two values deep match with each other.
 
 ```js
-const { isDeepMatch } = require("validatees");
+const { isDeepMatch } = require("@jetvil/validate");
 isDeepMatch({ a: 1 }, { a: 1 }); // true
 isDeepMatch({ a: 1 }, { a: 2 }); // false
 isDeepMatch([1, 2, { a: 3 }], [1, 2, { a: 3 }]); // true
@@ -355,7 +161,7 @@ await isDeepMatch(Promise.resolve(1), Promise.resolve(1)); // true
 Check if value is a valid email.
 
 ```js
-const { isValidEmail } = require("validatees");
+const { isValidEmail } = require("@jetvil/validate");
 isValidEmail("test@test.test"); // true
 isValidEmail(""); // false
 isValidEmail("test@test"); // false
@@ -375,7 +181,7 @@ Check if value is a valid password.
 - `specialChars`: number, default `1`
 
 ```js
-const { isValidPassword } = require("validatees");
+const { isValidPassword } = require("@jetvil/validate");
 isValidPassword("test"); // false
 isValidPassword("te!1", { minLength: 4 }); // true
 isValidPassword(123); // throws error
@@ -389,7 +195,7 @@ Check if value is a valid url.
 > IPV4 and IPV6 are not supported.
 
 ```js
-const { isValidUrl } = require("validatees");
+const { isValidUrl } = require("@jetvil/validate");
 isValidUrl("https://google.com"); // true
 isValidUrl("google.com"); // true
 isValidUrl("google"); // false
@@ -402,7 +208,7 @@ Check if value is a valid date.
 This function takes any input and will parse it to a Date, `-1` and `1` will work because they are valid dates.
 
 ```js
-const { isValidDate } = require("validatees");
+const { isValidDate } = require("@jetvil/validate");
 isValidDate(new Date()); // true
 isValidDate("1"); //true: because it will be parsed to a date starting from 1970.
 isValidDate(-1); //true : because it will be parsed to a date starting from 1970, moving backwards.
@@ -416,10 +222,10 @@ Feel free to open an issue or a pull request.
 
 Contributions are always welcome!🎉
 
-- Fork the project [here](https://github.com/m10rten/validatees/fork).
+- Fork the project [here](https://github.com/jetvil/validate/fork).
 - Create a new branch like this: `git checkout -b feature/featureName`.
 - Commit your changes to your branch: `git commit -m 'Create AwesomeFeature'`⚙️.
 - Push your branch: `git push origin feature/featureName`.
-- Open a pull request on the `dev` branch [here](https://github.com/m10rten/validatees/pulls)🔃.
+- Open a pull request on the `dev` branch [here](https://github.com/jetvil/validate/pulls)🔃.
 
 📒**Note:** Make sure to add tests for your changes ✅.
