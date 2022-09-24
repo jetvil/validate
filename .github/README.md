@@ -211,7 +211,8 @@ isValidDate("string"); // false
 
 # Contributing
 
-Found a bug🦟? or want to suggest a new feature🆕? or just want to help🆘? </br>
+Found a bug🦟? or want to suggest a new feature🆕? or just want to help🆘?
+
 Feel free to open an issue or a pull request.
 
 Contributions are always welcome!🎉
