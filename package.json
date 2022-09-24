@@ -1,6 +1,6 @@
 {
   "name": "@jetvil/validate",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "✅ Validation functions for ES6+ & TS projects.",
   "scripts": {
     "test": "jest",
@@ -41,7 +41,7 @@
     "npm": ">=8.0.0"
   },
   "dependencies": {
-    "@jetvil/types": "^0.1.5"
+    "@jetvil/types": "latest"
   },
   "directories": {
     "test": "tests",

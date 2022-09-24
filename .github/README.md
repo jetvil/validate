@@ -11,10 +11,11 @@
 
 # Features
 
-- 🚀**Easy to use**: Easy to install in your project.
-- ✅**ES6+ && TS**: TypeScript and ES6+ support(JS).
-- 🐭**Small footprint**: With less then 20kb, you won't even notice.
-- 📦**No dependencies**: You don't depend on anything else.
+- 🚀 **Easy to use**: Easy to install in your project.
+- ✅ **ES6+ && TS**: TypeScript and ES6+ support(JS).
+- 🐭 **Small footprint**: With less then 20kb, you won't even notice.
+- 📦 **No dependencies**: You don't depend on anything else.
+- 💵 **Free**: It's free and always will be, the beauty of open source.
 
 # Getting Started
 
@@ -29,13 +30,6 @@ npm install @jetvil/validate
 yarn add @jetvil/validate
 # pnpm
 pnpm install @jetvil/validate
-```
-
-To check if you have the **latest version**, run using `npx`✅:
-
-```bash
-# npx
-npx @jetvil/validate-cli --check
 ```
 
 ## Usage
