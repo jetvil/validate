@@ -1,6 +1,6 @@
 {
   "name": "@jetvil/validate",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "✅ Validation functions for ES6+ & TS projects.",
   "scripts": {
     "test": "jest",
