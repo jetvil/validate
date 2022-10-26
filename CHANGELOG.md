@@ -1,3 +1,7 @@
+## 0.1.4
+
+- Update the license to restrict selling products containing > 50% of the code in this repository.
+
 ## 0.1.3
 
 - Fix where no index file was found.
